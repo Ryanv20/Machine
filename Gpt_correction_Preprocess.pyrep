@@ -1,0 +1,36 @@
+import numpy as np
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+# Example dataset
+data = np.array([
+    ["High", "10%"],
+    ["Medium", "5%"],
+    ["Low", "15%"],
+    ["High", "20%"],
+    ["Medium", "0%"],
+    ["High", "10%"],
+    ["Low", "5%"],
+    ["Medium", "20%"],
+    ["High", "0%"],
+    ["Low", "15%"]
+])
+
+# Separating features and target
+X = data[:, :-1]  # First column (e.g., "High", "Medium", "Low")
+Y = data[:, -1:]  # Last column (e.g., "10%")
+
+# Handling the categorical feature (e.g., "High", "Medium", "Low")
+label_encoder = LabelEncoder()
+X_encoded = label_encoder.fit_transform(X.flatten()).reshape(-1, 1)
+
+# Handling the percentage feature in target (remove % and convert to float)
+Y_cleaned = np.array([float(val.strip('%')) for val in Y.flatten()]).reshape(-1, 1)
+
+# Scaling the features
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X_encoded)
+Y_scaled = scaler.fit_transform(Y_cleaned)
+
+print(f"Encoded and scaled X:\n{X_scaled}")
+print(f"Scaled Y:\n{Y_scaled}")
+

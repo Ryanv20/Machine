@@ -1,0 +1,11 @@
+Item_Name,Demand,Supply,Season,Discount,Price
+Bread,High,Low,Summer,10%,1.5
+Milk,Medium,Medium,Winter,5%,2.0
+Eggs,Low,High,Spring,15%,3.5
+Sugar,High,Low,Winter,20%,2.8
+Bananas,Medium,Low,Fall,0%,1.2
+Rice,High,High,Spring,10%,1.8
+Beans,Low,Medium,Summer,5%,2.2
+Cheese,Medium,Low,Winter,20%,4.5
+Tomatoes,High,Medium,Fall,0%,3.0
+Apples,Low,High,Summer,15%,2.5
